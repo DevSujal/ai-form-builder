@@ -7,8 +7,8 @@ import Header from "./_components/Header";
 export default function ClientLayout({ children }) {
   return (
     <div className="dark:bg-gray-900 min-h-screen dark:text-white">
-        <Header />
-        {children}
+      <Header />
+      <div className="mt-20">{children}</div>
       <Toaster />
     </div>
   );

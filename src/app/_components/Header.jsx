@@ -11,7 +11,7 @@ const Header = () => {
   const path = usePathname();
 
     return !path.includes("aiform") && (
-      <div className="p-5 border shadow-sm">
+      <div className="p-5 border shadow-sm fixed top-0 left-0 right-0 z-50 bg-white">
         <div className="flex justify-between items-center ">
           <Link href={"/"}>
             <Image src="/logo.svg" alt="logo" width={180} height={50} />
