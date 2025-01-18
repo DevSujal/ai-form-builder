@@ -26,7 +26,7 @@ function LiveAiForm({ params }) {
   };
   return (
     <div
-      className="w-full p-5 flex justify-center min-h-screen items-center"
+      className="w-full p-5 flex justify-center items-center"
       style={{ background: record?.background }}
     >
       {record && (

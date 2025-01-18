@@ -10,7 +10,7 @@ import { useToast } from "../../../hooks/use-toast";
 import { Controller, FormUi } from "../_components";
 import { Button } from "../../../components/ui";
 import Link from "next/link";
-
+import { ShareButton } from "../../dashboard/_components";
 
 const EditForm = ({ params }) => {
   const { user } = useUser();
@@ -115,10 +115,10 @@ const EditForm = ({ params }) => {
               <SquareArrowOutUpRight /> Live Preview
             </Button>
           </Link>
-          <Button className="flex gap-2 bg-orange-600 hover:bg-orange-500">
+          <ShareButton className="flex gap-2 bg-orange-600 text-white hover:bg-orange-500 hover:text-white p-2" size="md" variant="solid"  title={"Share"} text={"Share this form"} url={`${process.env.NEXT_PUBLIC_BASE_URL}/aiform/${formId}`}>
             {" "}
             <Share2 /> Share
-          </Button>
+          </ShareButton>
         </div>
       </div>
       <div className="flex flex-col-reverse md:grid md:grid-cols-3 gap-5">

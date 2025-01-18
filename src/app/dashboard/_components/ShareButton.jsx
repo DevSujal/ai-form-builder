@@ -2,7 +2,7 @@
 import React from "react";
 import { Button } from "../../../components/ui";
 
-const ShareButton = ({ url, title, text, className, children }) => {
+const ShareButton = ({ url, title, text, className, children, size = "sm", variant = "outline" }) => {
   const handleShare = async (e) => {
     e.preventDefault();
     if (navigator.share) {
@@ -22,7 +22,7 @@ const ShareButton = ({ url, title, text, className, children }) => {
   };
 
   return (
-    <Button variant="outline" onClick={handleShare} size="sm" className="flex gap-2">
+    <Button variant={variant} onClick={handleShare} size={size} className={`flex gap-2 ${className}`}>
       {children}
     </Button>
   );

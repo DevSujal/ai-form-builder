@@ -11,7 +11,7 @@ import {
   RadioGroup,
   RadioGroupItem,
   Button,
-  Input
+  Input,
 } from "../../../components/ui";
 import { FieldEdit } from "./";
 import { userResponses } from "../../../../configs/schema";
@@ -19,6 +19,7 @@ import { db } from "../../../../configs";
 import moment from "moment";
 import { toast } from "../../../hooks/use-toast";
 import { SignInButton, useUser } from "@clerk/nextjs";
+import { usePathname } from "next/navigation";
 
 const FormUi = ({
   jsonForm,
@@ -33,7 +34,7 @@ const FormUi = ({
 }) => {
   const { user, isSignedIn } = useUser();
   const [form, setForm] = useState({});
-
+  const path = usePathname();
   const handleInputChange = (label, e) => {
     const { value } = e.target;
     const name = label;
@@ -46,6 +47,12 @@ const FormUi = ({
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (path.includes("edit-form")) {
+      toast({
+        description: "You can't submit the form in edit mode",
+      });
+      return;
+    }
     const result = await db.insert(userResponses).values({
       jsonResponse: JSON.stringify(form),
       createdAt: moment().format("DD/MM/yyyy"),
