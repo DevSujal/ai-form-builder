@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
-import CreateForm from "./_components/CreateForm";
-import FormList from "./_components/FormList";
+import {CreateForm, FormList} from "./_components";
 
 const Dashboard = () => {
   return (

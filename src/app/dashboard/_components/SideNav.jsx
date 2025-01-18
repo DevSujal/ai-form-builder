@@ -2,17 +2,16 @@
 import { LibraryBig, LineChart, MessageSquare, Shield } from "lucide-react";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import { Button } from "../../../components/ui/button";
-import { Progress } from "../../../components/ui/progress";
+import { Progress } from "../../../components/ui";
 import Link from "next/link";
 import { useUser } from "@clerk/nextjs";
 import { JosnForms } from "../../../../configs/schema";
 import { db } from "../../../../configs";
 import { toast } from "../../../hooks/use-toast";
-import CreateForm from "./CreateForm";
+import {CreateForm} from "./";
 import { eq } from "drizzle-orm";
 
-const SideNav = () => {
+const SideNav = ({className}) => {
   const [countOfFormBuild, setCountOfFormBuild] = useState(0);
   const [percentage, setPercentage] = useState(0);
   const menulist = [
@@ -64,7 +63,7 @@ const SideNav = () => {
     }
   };
   return (
-    <div className="h-screen shadow-md border">
+    <div className={`h-screen shadow-md border ${className}`}>
       <div className="p-5">
         {menulist.map((menu, index) => (
           <Link

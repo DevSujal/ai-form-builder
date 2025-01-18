@@ -3,7 +3,7 @@ import React, { use, useEffect, useState } from "react";
 import { db } from "../../../../configs";
 import { JosnForms } from "../../../../configs/schema";
 import { eq } from "drizzle-orm";
-import FormUi from "../../edit-form/_components/FormUi";
+import { FormUi } from "../../edit-form/_components";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -36,8 +36,7 @@ function LiveAiForm({ params }) {
           onFieldUpdate={() => {}}
           deleteField={() => {}}
           style={record.style}
-          editable=
-          {false}
+          editable={false}
           formId={formid}
           enableSignIn={record.enableSignIn}
         />

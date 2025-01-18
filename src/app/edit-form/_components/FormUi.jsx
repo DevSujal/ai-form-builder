@@ -1,22 +1,23 @@
 import React, { useState } from "react";
-import { Input } from "../../../components/ui/input";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../../../components/ui/select";
-import { Textarea } from "../../../components/ui/textarea";
-import { Label } from "../../../components/ui/label";
-import { Checkbox } from "../../../components/ui/checkbox";
-import { RadioGroup, RadioGroupItem } from "../../../components/ui/radio-group";
-import FieldEdit from "./FieldEdit";
+  Textarea,
+  Label,
+  Checkbox,
+  RadioGroup,
+  RadioGroupItem,
+  Button,
+  Input
+} from "../../../components/ui";
+import { FieldEdit } from "./";
 import { userResponses } from "../../../../configs/schema";
 import { db } from "../../../../configs";
 import moment from "moment";
 import { toast } from "../../../hooks/use-toast";
-import { Button } from "../../../components/ui/button";
 import { SignInButton, useUser } from "@clerk/nextjs";
 
 const FormUi = ({

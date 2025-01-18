@@ -1,15 +1,15 @@
 "use client";
 import React from "react";
 import {
+  Textarea,
+  Button,
   Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
-} from "../../../components/ui/dialog";
-import { Textarea } from "../../../components/ui/textarea";
-import { Button } from "../../../components/ui/button";
+  DialogTrigger
+} from "../../../components/ui";
 import { AiChatSession } from "../../../../configs/AiModel";
 import { useUser } from "@clerk/nextjs";
 import { db } from "../../../../configs";
@@ -17,7 +17,8 @@ import { JosnForms } from "../../../../configs/schema";
 import moment from "moment";
 import { Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
-const CreateForm = ({className}) => {
+
+const CreateForm = ({ className }) => {
   const [open, setOpen] = React.useState(false);
   const [userInput, setUserInput] = React.useState("");
   const [loading, setLoading] = React.useState();
@@ -45,9 +46,9 @@ const CreateForm = ({className}) => {
         }
       }
     } catch (error) {
-      setLoading(false)
+      setLoading(false);
       console.log(error.message);
-    } 
+    }
   };
   return (
     <div>
@@ -55,7 +56,6 @@ const CreateForm = ({className}) => {
         onClick={() => {
           setOpen(true);
         }}
-
         className={className}
       >
         + Create Form

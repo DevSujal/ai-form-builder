@@ -1,8 +1,6 @@
 "use client";
-
 import { Toaster } from "../components/ui/toaster";
-import { ThemeProvider } from "../components/theme-provider";
-import Header from "./_components/Header";
+import { Header } from "./_components";
 
 export default function ClientLayout({ children }) {
   return (

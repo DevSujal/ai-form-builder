@@ -6,11 +6,12 @@ import { and, eq } from "drizzle-orm";
 import { useUser } from "@clerk/nextjs";
 import { ArrowLeft, Share2, SquareArrowOutUpRight } from "lucide-react";
 import { useRouter } from "next/navigation";
-import FormUi from "../_components/FormUi";
 import { useToast } from "../../../hooks/use-toast";
-import Controller from "../_components/Controller";
-import { Button } from "../../../components/ui/button";
+import { Controller, FormUi } from "../_components";
+import { Button } from "../../../components/ui";
 import Link from "next/link";
+
+
 const EditForm = ({ params }) => {
   const { user } = useUser();
   const { formId } = React.use(params);
@@ -120,7 +121,7 @@ const EditForm = ({ params }) => {
           </Button>
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div className="flex flex-col-reverse md:grid md:grid-cols-3 gap-5">
         <div className="border p-5 h-screen overflow-y-scroll rounded-lg shadow-md">
           <Controller
             setSelectedTheme={(value) => {
@@ -148,7 +149,7 @@ const EditForm = ({ params }) => {
             selectedTheme={selectedTheme}
             background={background}
             style={style}
-            enableSignIn = {enableSignIn}
+            enableSignIn={enableSignIn}
           />
         </div>
       </div>

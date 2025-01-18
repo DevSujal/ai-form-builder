@@ -6,12 +6,10 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../../../components/ui/select";
-import { themes } from "./themes";
-import { backgrounds } from "./background";
-import { Button } from "../../../components/ui/button";
-import { styles } from "./styles";
-import { Checkbox } from "../../../components/ui/checkbox";
+  Button,
+  Checkbox
+} from "../../../components/ui";
+import { themes, backgrounds, styles } from "./";
 
 function Controller({
   setSelectedTheme,
@@ -67,7 +65,7 @@ function Controller({
       </Select>
 
       <h2 className="mt-8 my-1">Background</h2>
-      <div className="grid grid-cols-3 gap-4">
+      <div className="flex flex-wrap justify-center items-center gap-2">
         {backgrounds.map(
           (background, index) =>
             (index < 6 || showMore) && (

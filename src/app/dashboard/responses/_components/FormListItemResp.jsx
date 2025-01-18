@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { db } from "../../../../../configs";
 import { userResponses } from "../../../../../configs/schema";
 import { Loader2, Upload } from "lucide-react";
-import { Button } from "../../../../components/ui/button";
+import { Button } from "../../../../components/ui";
 import { count, eq } from "drizzle-orm";
 import * as XLSX from "xlsx";
 import { toast } from "../../../../hooks/use-toast";

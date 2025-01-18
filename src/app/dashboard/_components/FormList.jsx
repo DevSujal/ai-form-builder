@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { db } from "../../../../configs";
 import { JosnForms } from "../../../../configs/schema";
 import { desc, eq } from "drizzle-orm";
-import FormListItem from "./FormListItem";
+import { FormListItem} from "./";
 
 const FormList = () => {
   const { user } = useUser();
@@ -26,7 +26,7 @@ const FormList = () => {
     console.log(result)
   };
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
       {formList.map((form) => (
         <div key={form.id} className="p-3 my-2 gap-5">
           <FormListItem

@@ -1,13 +1,12 @@
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
 import Image from "next/image";
 import { Button } from "../../components/ui/button";
 import { SignInButton, UserButton, useUser } from "@clerk/nextjs";
 import Link from "next/link";
-import { ModeToggle } from "../../components/ui/toggle";
 import { usePathname } from "next/navigation";
 const Header = () => {
-  const { user, isSignedIn } = useUser();
+  const { isSignedIn } = useUser();
   const path = usePathname();
 
     return !path.includes("aiform") && (

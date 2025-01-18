@@ -1,13 +1,11 @@
-import { Delete, Edit, Trash } from "lucide-react";
+import { Edit, Trash } from "lucide-react";
 import React from "react";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "../../../components/ui/popover";
-import { Input } from "../../../components/ui/input";
-import { Button } from "../../../components/ui/button";
-import {
+  Input,
+  Button,
   AlertDialog,
   AlertDialogAction,
   AlertDialogCancel,
@@ -16,8 +14,8 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-  AlertDialogTrigger,
-} from "../../../components/ui/alert-dialog";
+  AlertDialogTrigger
+} from "../../../components/ui";
 
 const FieldEdit = ({ defaultValue, onUpdate, deleteField }) => {
   const [label, setLabel] = React.useState(defaultValue?.label);

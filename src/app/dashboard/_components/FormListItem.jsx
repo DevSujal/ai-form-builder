@@ -1,7 +1,6 @@
 "use client";
 import { Edit2, Share2, Trash2 } from "lucide-react";
 import React from "react";
-import { Button } from "../../../components/ui/button";
 import Link from "next/link";
 import {
   AlertDialog,
@@ -13,13 +12,14 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "../../../components/ui/alert-dialog";
+  Button
+} from "../../../components/ui";
 import { useUser } from "@clerk/nextjs";
 import { and, eq } from "drizzle-orm";
 import { JosnForms, userResponses } from "../../../../configs/schema";
 import { toast } from "../../../hooks/use-toast";
 import { db } from "../../../../configs";
-import ShareButton from "./ShareButton";
+import { ShareButton } from "./";
 
 const FormListItem = ({ form, formId, setRefresh }) => {
   const { user } = useUser();
